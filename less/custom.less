@@ -15,11 +15,7 @@ body {
 }
 
 a {
-	-webkit-transition: all 0.2s; 
-	-moz-transition: all 0.2s; 
-	-o-transition: all 0.2s; 
-	transition: all 0.2s;  	
-	
+	.transition (all 0.2s); 	
 	outline: none;
 }
 
@@ -49,13 +45,25 @@ img {
 	border: none;
 }
 
-.container-fluid {
-	max-width: 960px;
-	margin: 0 auto;
+/* LESS Methods */
+.box-shadow (@value) {
+	-webkit-box-shadow:	@value;
+	-moz-box-shadow:	@value;
+	box-shadow:			@value;
 }
 
-.mobile {
-	display: none;
+.border-radius (@value) {
+	-webkit-border-radius:	@value;
+	-moz-border-radius:		@value;
+	border-radius:			@value;
+}
+
+.transition (@value) {
+	-webkit-transition: @value;
+	-moz-transition: @value;
+	-ms-transition: @value;
+	-o-transition: @value;
+	transition: @value;
 }
 
 /* Logo */
