@@ -1,14 +1,3 @@
-/* Selection */
-::-webkit-selection{background:#3c5485;color:#fff}
-::-moz-selection{background:#3c5485;color:#fff}
-::selection{background:#3c5485;color:#fff}
-
-/* Placeholder */
-::-webkit-input-placeholder { color: #ccc; }
-:-moz-placeholder { color: #ccc; }
-::-moz-placeholder { color: #ccc; }
-:-ms-input-placeholder { color: #ccc; }
-
 body {
 	padding-top: 60px;
 	padding-bottom: 40px;
@@ -51,19 +40,25 @@ img {
 	border: none;
 }
 
-/* LESS Snippets */
+/**
+ * LESS Snippets 
+ */
+ 
+/* Box Shadow */
 .box-shadow (@value) {
 	-webkit-box-shadow:	@value;
 	-moz-box-shadow:	@value;
 	box-shadow:			@value;
 }
 
+/* Border Radius */
 .border-radius (@value: 3px) {
 	-webkit-border-radius:	@value;
 	-moz-border-radius:		@value;
 	border-radius:			@value;
 }
 
+/* Transition Animation */
 .transition (@value: none) {
 	-webkit-transition: @value;
 	-moz-transition: @value;
@@ -72,6 +67,7 @@ img {
 	transition: @value;
 }
 
+/* User Select */
 .user-select (@value: none) {
 	-webkit-user-select: @value;
 	-moz-user-select: @value;
@@ -79,12 +75,29 @@ img {
 	user-select: @value;
 }
 
-.opacity(@opacity: 100) {
-	-khtml-opacity: (@opacity / 100);
-	-moz-opacity: (@opacity / 100);
-	opacity: (@opacity / 100);
-	-ms-filter: e(%('"progid:DXImageTransform.Microsoft.Alpha(Opacity=%d)"', @opacity));
-    filter: e(%("progid:DXImageTransform.Microsoft.Alpha(Opacity=%d)", @opacity));
+/* Opacity */
+.opacity(@value: 100) {
+	-khtml-opacity: (@value / 100);
+	-moz-opacity: (@value / 100);
+	opacity: (@value / 100);
+	-ms-filter: e(%('"progid:DXImageTransform.Microsoft.Alpha(Opacity=%d)"', @value));
+    filter: e(%("progid:DXImageTransform.Microsoft.Alpha(Opacity=%d)", @value));
+}
+
+/* Placeholder Text Color */
+.placeholder-color(@value) {
+	input::-webkit-input-placeholder { color: @value; }
+	input:-moz-placeholder { color: @value; }
+	textarea::-webkit-input-placeholder { color: @value; }
+	textarea:-moz-placeholder { color: @value; }
+}
+.placeholder-color(#999);
+
+/* Text Selection Highlighting */
+.text-highlighting(@color, @background) {
+	::-webkit-selection{ background:@background; color: @color; }
+	::-moz-selection{ background:@background; color: @color; }
+	::selection{ background:@background; color: @color; }
 }
 
 /* Logo */
