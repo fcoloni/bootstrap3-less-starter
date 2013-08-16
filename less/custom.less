@@ -30,11 +30,14 @@ table {
 
 button {
 	cursor: pointer;
+}
 
+input {
 	&:focus {
 		outline: none;
 	}
 }
+
 
 img {
 	border: none;
@@ -99,6 +102,13 @@ img {
 	::-moz-selection{ background:@background; color: @color; }
 	::selection{ background:@background; color: @color; }
 }
+
+/* For Width and Height */
+.rect(@width, @height) {
+	width: @width;
+	height: @height;
+}
+
 
 /* Logo */
 .logo a {
